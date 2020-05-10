@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Themes of the Future</title>
+
+	<meta name="description" content="The new frontier of Gutenberg block-based themes and theme development">
+	<meta name="author" content="itsjusteileen">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/space.css" id="theme">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Engage Mr. Sulu -->
+		<div class="slides">
+			<section data-background="assets/sidetrack-sky.jpg">
+				<h1 class="groovy-title">Themes of the Future</h1>
+				<h6 class="groovy-subtitle"><a href="https://twitter.com/itsjusteileen">it's just eileen</a> | <a href="https://sidetrack.studio">Sidetrack Studio</a></p>
+				</section>
+
+				<section>
+					<h1 class="groovy-bold">Hello :-)</h1>
+					<div class="bio">
+					it's just eileen</br> I’m a Design Engineer creating user experiences and interfaces for WordPress websites and products as partner/founder at Sidetrack.Studio and wpBlockShop.com where we specialize in engineering custom WordPress block solutions.
+				</div>
+			</section>
+
+			<section data-background="assets/sidetrack-sky.jpg">
+				<h1 class="groovy-frontier">The New Frontier...</h1>
+				<div class="btn-wrapper">
+					<canvas width="450" height="260" id="btn"></canvas>
+					<div class="svg-wrapper">
+						<svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop offset="0%" stop-color="#DA22FF" />
+									<stop offset="100%" stop-color="#9733EE" />
+								</linearGradient>
+							</defs>
+							<rect class="shape" height="60" width="320" stroke="url(#gradient)" />
+						</svg>
+						<button class="btn" onclick="location.href='themes of the future wcsatx/index.html#/3';">Let's Get Started</button>
+					</div>
+				</div>
+			</section>
+
+				<section>
+					<small>Point of View</small>
+					<h2>Future of Themes</h2>
+					<blockquote cite="https://twitter.com/photomatt/status/1230646264355835904">
+						&ldquo;I think that we'll always have something called themes and something like a theme directory....to users, I think it's really key that there's something called a theme that allows them to get a 
+						head start on beautiful design that, that they don't have to start from scratch and design themselves.&rdquo;
+					</blockquote>
+					<p>Matt Mullenweg, February 2020</p>
+				</section>
+
+				<section>
+					<small>Point of View</small>
+					<h2>The Big Question</h2>
+					<p>As this space evolves, how can we work with what is available today making our themes block enabled, while also preparing for the next generation of theme building?</p>
+				</section>
+
+				<section>
+					<small>Point of View</small>
+					<h2>What is Gutenberg Enabled?</h2>
+					<p>Any theme that takes advantage of Gutenberg Theme Supports for Block rendering in the Editor and on the Front End. </p>
+				</section>
+
+				<section>
+					<small>Point of View</small>
+					<h2>Check out these Gutenberg Enabled Themes</h2>
+					<a href="https://wordpress.org/themes/go/"><img width="250" height="150" data-src="assets/go-theme.png" alt="go-theme"></a>
+					<a href="https://wordpress.org/themes/chaplin/"><img width="250" height="150" data-src="assets/chaplin-theme.png" alt="chaplin-theme"></a>
+					<a href="https://wordpress.org/themes/atomic-blocks/"><img width="250" height="150" data-src="assets/atomic-theme.png" alt="atomic-blocks-theme"></a>
+				</section>
+
+			<section>
+				<div>
+					<h2>What Makes Gutenberg Enabled Themes Different?</h2>
+					<p class="fragment fade-in-then-semi-out">Theme Supports</p>
+					<p class="fragment fade-in-then-semi-out">Block Templates</p>
+				</div>
+			</section>
+
+			<section>
+				<section>
+					<div >
+						<h2>Theme Supports</h2>
+					</div>
+				</section>
+
+				<section>
+					<small>Theme Supports</small>
+					<h2>The Basics</h2>
+					<p>The Block Editor provides new functionality to take advantage of Gutenberg blocks.</p>
+				</section>
+
+				<section>
+					<small>Theme Supports</small>
+					<h2>Add Theme Supports</h2>
+					<p class="fragment fade-in-then-semi-out">Editor Color Palette</p>
+					<p class="fragment fade-in-then-semi-out">Editor Text Size Palette</p>
+					<p class="fragment fade-in-then-semi-out">Responsive Embeds</p>
+					<p class="fragment fade-in-then-semi-out">Frontend & Editor Styles</p>
+					<p class="fragment fade-in-then-semi-out">Dark Mode</p>
+				</section>
+
+				<section>
+					<small>Theme Supports</small>
+					<h2>Editor Color Palette</h2>
+					<pre><code class="hljs" data-trim data-line-numbers="2">
+						function sideways_setup_theme_supported_features() {
+							add_theme_support(
+								'editor-color-palette',
+								[
+									[
+										'name'  => __( 'sidetrack purple', 'themeLangDomain' ),
+										'slug'  => 'sidetrack-purple',
+										'color' => '#773B7A',
+									],
+								]
+							);
+						}
+						add_action( 'after_setup_theme', 'sideways_setup_theme_supported_features' );					
+					</code></pre>
+				</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Opt In Features</h2>
+				<p>The block editor also provides opt-in opinionated styles you can access.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Default Block Styles</h2>
+				<pre><code class="hljs html" data-line-numbers="1">add_theme_support( 'wp-block-styles' );</code></pre>
+				<p>Core blocks include default styles. The styles are enqueued for editing but are not enqueued for viewing unless the theme opts-in to the core styles.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Wide Alignment</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1">
+					add_theme_support( 'align-wide' );
+				</code></pre>
+				<p>Some blocks such as the image block have the possibility to define a “wide” or “full” alignment by adding the corresponding classname to the block’s wrapper ( alignwide or alignfull ).</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Floats</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1,2">
+					<div class="wp-block-image" >
+						<figure class="alignleft">
+							<img src="..." alt="" width="200px" />
+							<figcaption>Short image caption.</figcaption>
+						</figure>
+					</div>
+				</code></pre>
+				<p>The block editor adds additional markup to floated images and images with captions to make styling them easier.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Block Color Palettes</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1,3,8">
+					add_theme_support( 'editor-color-palette', array(
+					array(
+					'name' => __( 'sidetrack dark space', 'themeLangDomain' ),
+					'slug' => 'sidetrack-dark-space',
+					'color' => '#a156b4',
+					),
+					array(
+					'name' => __( 'sidetrack neon purple', 'themeLangDomain' ),
+					'slug' => 'sidetrack-neon-purple',
+					'color' => '#d0a5db',
+					),
+					) );
+				</code></pre>
+				<p>Different blocks have the possibility of customizing colors. The block editor provides a default palette, but a theme can overwrite it and provide its own.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Deep Dive</h2>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">name</span> is a human-readable label that appears in the tooltip and provides a meaningful color description.</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">slug</span> is a unique identifier used to generate the CSS classes for the block editor color palette.</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">color</span> is the hexadecimal code to specify the color.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Disable Custom Colors</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1">
+					add_theme_support( 'disable-custom-colors' );
+				</code></pre>
+				<p>This flag will make sure users are only able to choose colors from the editor-color-palette the theme provided or from the editor default colors if the theme did not provide one.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Block Gradient Presets</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1,3,8">
+					add_theme_support(
+					'editor-gradient-presets',
+					array(
+					array(
+					'name'     => __( 'Vivid cyan blue to vivid purple', 'themeLangDomain' ),
+					'gradient' => 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
+					'slug'     => 'vivid-cyan-blue-to-vivid-purple'
+					),
+					)
+					);
+				</code></pre>
+				<p>Different blocks have the possibility of selecting from a list of predefined gradients. The block editor provides a default gradient presets, but a theme can overwrite them and provide its own</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>CSS for Block Gradient Presets</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1">
+					.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+					background: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+				}
+			</code></pre>
+			<p>Themes are responsible for creating the classes that apply the gradients. To apply the gradient, implement the corresponding class.</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Deep Dive</h2>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">name</span> is a human-readable label that appears in the tooltip and provides a meaningful gradient description.</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">gradient</span> is the CSS value of a gradient applied to a background-image of the block</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">slug</span> is a unique identifier for the gradient used to generate CSS classes used by the block editor</p>
+			</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Disable Block Gradient</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				add_theme_support( 'disable-custom-gradients' );
+			</code></pre>
+			<p>When set, users will be restricted to the default gradients provided in the block editor or the gradients provided via the editor-gradient-presets theme support setting.</p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Block Font Sizes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1,3,8">
+				add_theme_support( 'editor-font-sizes', array(
+				array(
+				'name' => __( 'Small', 'themeLangDomain' ),
+				'size' => 12,
+				'slug' => 'small'
+				),
+				array(
+				'name' => __( 'Regular', 'themeLangDomain' ),
+				'size' => 16,
+				'slug' => 'regular'
+				) );
+			</code></pre>
+			<p>Blocks may allow the user to configure the font sizes they use, e.g., the paragraph block. Blocks provide a default set of font sizes, but a theme can overwrite it and provide its own.</p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Block Font Sizes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				.has-regular-font-size {
+					font-size: 16px;
+				}
+			</code></pre>
+			<p>Themes are responsible for creating the classes that apply the correct font size styles. The class name is built appending ‘has-‘, followed by the font size name using kebab case and ending with -font-size.</p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Disable Block Font Sizes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				add_theme_support('disable-custom-font-sizes');
+			</code></pre>
+			<p>When set, users will be restricted to the default sizes provided in the block editor or the sizes provided via the editor-font-sizes theme support setting.</p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Editor styles</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				add_theme_support('editor-styles');
+			</code></pre>
+			<p>The block editor supports the theme’s editor styles, however it works a little differently than in the classic editor.</p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Enqueuing the editor style</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				add_editor_style( 'style-editor.css' );
+			</code></pre>
+			<p>Use the add_editor_style function to enqueue and load CSS on the editor screen. For the classic editor, this was the only function needed to add style to the editor. </p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Responsive embedded content</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				<figure class="wp-embed-aspect-16-9 wp-has-aspect-ratio">...</figure>
+			</code></pre>
+			<p>Embed blocks automatically apply styles to embedded content to reflect the aspect ratio of content that is embedded in an iFrame. A block styled with the aspect ratio responsive styles would look like. </p>
+		</section>
+
+		<section>
+			<small>Theme Supports</small>
+			<h2>Responsive embedded content</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				add_theme_support( 'responsive-embeds' );
+			</code></pre>
+			<p>To make the content resize and keep its aspect ratio, the <body> element needs the wp-embed-responsive class. This is not set by default, and requires the theme to opt in to the responsive-embeds feature.</p>
+		</section>
+	</section>
+
+	<section>
+		<section>
+			<div>
+				<h2>Block Templates</h2>
+			</div>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>What are Block Templates?</h2>
+			<p>Block Templates are a set of predefined blocks for content defined in the editor and stored in post_content.</p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Why Use Block Templates?</h2>
+			<p class="fragment fade-in-then-semi-out">Block templates allow theme builders to provide the admin user with guiderails to add content.</p>
+			<br><p class="fragment fade-in-then-semi-out">They make it easier for the user to get content on the page by limiting the design choices they need to make.</p>
+			<aside class="notes">
+				Beyond preserving the integrity of the design, the primary role of block templates provides better UX/UI. 
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<img width="400" height="700" data-src="assets/block-template-cpt-final.png" alt="block-template-cpt-final"></a>
+			<aside class="notes">
+				For illustration purposes, today we'll build a block template for a listing page for Sidestreet Realty. We're using a visually stripped version of the Go Theme to make it easy to see our templates. Before we get started we'll define our content. We know we'll need to show the listing address, an image, price, features and a gallery. 
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<img width="1020" height="450" data-src="assets/block-template-example.jpg" alt="block-template-example"></a>
+			<aside class="notes">
+				This would be pretty tedious for user to add all of these blocks each time, so we'll build a block template allowing them to quickly get started. 
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Block Templates <br>vs Page Templates</h2>
+			<p>Block Templates impose structure on post content, <br> they are unrelated to page templates found in themes.</p>
+			<aside class="notes">
+				They are not what you would see in the dropdown of templates under Documents in the Inspector Controls. You might want to add block templates to a page template or post template, and we will see a few ways this can be accomplished as we look at each method used to create block templates. So let's get started.  
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Block Templates <br>vs Block Patterns</h2>
+			<p>Block Patterns are a layout grid that allow an admin user to quickly get a layout.</p>
+			<aside class="notes">
+				These are just coming into use, with new patterns being developed.  
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>How do we add Block Templates to our Themes?</h2>
+			<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">option 1 </span>Use PHP to associate the Block Template<br>with a Post Type</p>
+			<p class="fragment fade-in" style="color:#B63BE2">OR</p>
+			<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">option 2 </span>Use JS to create Block Template as a freestanding block that can be inserted anywhere.</p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Via PHP</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="2">
+				function sidetrack_register_template() {
+					$post_type_object = get_post_type_object( 'post' );
+					$post_type_object->template = array(
+					array( 'core/media-text' ),
+					array( 'core/heading' ),
+					array( 'core/list' ),
+					array( 'core/paragraph' ),
+					);
+				}
+				add_action( 'init', 'sidetrack_register_template' );
+			</code></pre>
+			<p>Create a function that adds an array of blocks for admin users to populate.</p>
+			<aside class="notes">
+				This function can be added as shown here which will create the block template on a dynamic post or you can change 'post' to 'page' to add a block template to a static page.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>JS</h2>
+				<pre>
+					<code class="hljs" data-trim data-line-numbers="">
+						import { __ }  from '@wordpress/i18n';
+						import { registerBlockType } from '@wordpress/blocks';
+						import {
+							InnerBlocks,
+						} from '@wordpress/block-editor';
+
+						const SIDESTREET_PROPERTY_TEMPLATE = [
+							[ 'core/heading', { placeholder: 'Listing Price'} ],
+							[ 'core/paragraph', { placeholder: 'Listing Description' } ],
+							[ 'core/image', {} ],
+							[ 'core/list', { placeholder: 'Property Features' } ],
+							[ 'core/gallery', {} ],
+						];
+
+						registerBlockType( 'sidetrack/property-template', {
+							title: __( 'Sidetreet Property Template', 'sidetrack' ),
+							icon: {
+								foreground: '#fff',
+								background: '#773B7A',
+								src: 'multisite',
+							},
+							category: 'sidetrack',
+							attributes: {
+								content: {
+									type: 'string',
+								},
+							},
+
+							edit: ( props ) => {
+								const { className } = props;
+								return (
+									<div className={ className }>
+										<InnerBlocks
+											template={SIDESTREET_PROPERTY_TEMPLATE}
+											templateLock={true}
+											renderAppender={(
+												() => <InnerBlocks.ButtonBlockAppender/>
+											)}
+										/>
+									</div>
+								);
+							},
+
+							save: ( props ) => {
+								const { className } = props;
+								return (
+									<div className={ className }>
+										<InnerBlocks.Content />
+									</div>
+								);
+							},
+						});
+					</code>
+				</pre>
+			<aside class="notes">
+				Example code from the Developer handbook, which is slightly outdated. You might prefer to try our method we use in our studio.
+
+				In this example we use wp-scripts which is now the preferred method and uses the npm script created and maintained by the #core-editor team. You'll notice we're adding the block template to the block inserter which provides a great amount of flexibility allowying admins to add the block template to a page or post.
+
+				Please NOTE: Reveal.js is messing with Capitalization and the closing JSX
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<img width="400" height="450" data-src="assets/block-template-block.png" alt="block-template-block"></a>
+			<aside class="notes">
+				Now we see we have a custom block that is present in the inserter tool for a user to add a block template anywhere. 
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Custom Post Type</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				function sidetrack_register_property_post_type() {
+					$args = array(
+						'public' => true,
+						'label'  => 'Property',
+						'template_lock' => all,
+						'show_in_rest' => true,
+						'template' => array(
+							array( 'core/image', array(
+							'align' => 'left',
+							) ),
+							array( 'core/heading
+							', array(
+							'align' => 'right',
+							) ),
+							array( 'core/heading', array(
+							'placeholder' => 'Price',
+							) ),
+							array( 'core/paragraph', array(
+							'placeholder' => 'Property Description',
+						) ),
+					),
+				);
+				register_post_type( 'property', $args );
+			}
+			add_action( 'init', 'sidetrack_register_property_post_type' );
+		</code></pre>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Attributes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				'show_in_rest' => true,',
+			</code></pre>
+			<p>Add placeholder text</p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Attributes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				'placeholder' => 'Listing price',
+			</code></pre>
+			<p>Add placeholder text</p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Attributes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				'align' => 'left',
+			</code></pre>
+			<p>Block Alignment</p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Attributes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				'template_lock' => 'all',
+			</code></pre>
+			<p>Locks blocks so admin can't move or insert </p>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Attributes</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="1">
+				'template_lock' => 'insert',
+			</code></pre>
+			<p>Locks blocks so admin can't insert new blocks but can move blocks in the template.</p>
+		</section>
+
+		<section data-background-video="assets/block-template-demo.mp4" data-background-color="#000000">
+			<aside class="notes">
+				Now we can see by eliminating the options, the admin user can quickly get this listing onto the site.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Template Benefits</small>
+			<h2>Modular Design</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="">
+					$post_type_object->template = array(
+					array( 'core/media-text' ),
+					array( 'core/heading' ),
+					array( 'core/list' ),
+					array( 'core/paragraph' ),
+					);
+			</code></pre>
+			<p>By creating block templates we can more clearly see the modular components of our sites.</p>
+			<aside class="notes">
+				This is starting to look like Atomic design where we can place reusebale components, the particles atoms and moledcules that create the organisms or our templates that make up our site.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Template Benefits</small>
+			<h2>Better User Experience</h2>
+			<p>By eliminating the options, the admin user can quickly get this listing onto the site.</p>
+			<aside class="notes">
+				Hick's Law in action. By eliminating the options, we make it easier for the admin user to post this real estate listing onto their site.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>So Meta</h2>
+			<p>The rise of the meta box came about from the limitation of structuring content in the Classic WordPress editor.</p>
+			<aside class="notes">
+				This was a powerful tool allowing theme creators to customize how admin users added content to their site that could be both stored for use in other places as well as displayed on the front end. Using tools like ACF, theme authors could make it easier to put together the Real Estate Lising.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>So Meta</h2>
+			<p>Using meta boxes to create page layouts has direct ramifcations on your database.</p>
+				<p class="fragment fade-in-then-semi-out">It moves what should be post_content into meta.</p>
+				<p class="fragment fade-in-then-semi-out">item one</p>
+				<p class="fragment fade-in-then-semi-out">item two</p>
+				<p class="fragment fade-in-then-semi-out">item three</p>
+			<aside class="notes">
+				While layout patterns like Team Bios and Events make sense as meta data, in some cases, I've seen theme authors using meta boxes to define page layout. While useful at the time, it block theme development we are now able to keep post_content where it belongs.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>Creating Content for Meta</h2>
+			<p>Content created as meta no longer needs to be, it can be added directly to the page with blocks.</p>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>Meta as a Block</h2>
+			<p>Now when you need to add content to be stored as meta, build your block with <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/#meta">block attributes</a></p>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>Meta as a Block</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="">
+				attributes: {
+					image: {
+						type: 'object',
+						source: 'meta',
+						meta: 'propertyimg'
+					},
+					price: {
+						type: 'string',
+						source: 'meta',
+						meta: 'price'
+					},
+				},				
+			</code></pre>
+			<aside class="notes">
+				
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Meta</small>
+			<h2>Meta as a Block</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="">
+				function sidetrack_property_meta() {
+					register_post_meta(
+						'post',
+						'image',
+						array(
+							'type'          => 'string',
+							'single'        => true,
+							'show_in_rest'  => true,
+							'auth_callback' => function() {
+								return current_user_can( 'edit_posts' );
+								},
+						)
+					);
+					register_post_meta(
+						'post',
+						'price',
+						array(
+							'type'          => 'string',
+							'single'        => true,
+							'show_in_rest'  => true,
+							'auth_callback' => function() {
+								return current_user_can( 'edit_posts' );
+								},
+						)
+					);
+				}
+				add_action( 'init', 'sidetrack_property_meta' );
+			</code></pre>
+		</section>
+	</section>
+
+	<!--Are you outta your cornfed mind?-->
+
+	<section data-background="assets/sidetrack-sky.jpg">
+		<h1 class="groovy-frontier">The Future<br>...Now.</h1>
+	</section>
+
+	<section>
+		<h2>To Boldy Go</h2>
+		<p>What will applying the block experience <br>across WordPress look like? <br>How is this accomplished?</p>
+		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Themes</p>
+		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Theme Templates</p>
+		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Full Site Editing</p>
+		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Global Styles</p>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>What is a Block-Based Theme?</h2>
+		<p>A WordPress theme created with HTML files built entirely with blocks. Block-based themes are minimal html structures that provide the containers for rendering blocks in the browser.</p>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>Block-based Theme Structure</h2>
+		<pre><code class="hljs" data-trim data-line-numbers="">
+			theme
+			|__ style.css
+			|__ functions.php
+			|__ block-templates
+			  |__ index.html
+			  |__ single.html
+			  |__ archive.html
+			  |__ ...
+			|__ block-template-parts
+			  |__ header.html
+			  |__ footer.html
+			  |__ sidebar.html
+			  |__ ...
+		</code></pre>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>Block-Based Theme<br>Templates</h2>
+		<pre><code class="hljs" data-trim data-line-numbers="">
+			<!-- wp:site-title /-->
+
+			<!-- wp:image {"sizeSlug":"large"} -->
+			<figure class="wp-block-image size-large">
+				<img src="http://placebeard.it/640/480" alt="" />
+			</figure>
+			<!-- /wp:image -->
+
+			<!-- wp:group -->
+			<div class="wp-block-group">
+				<div class="wp-block-group__inner-container">
+					<!-- wp:post-title /-->
+					<!-- wp:post-content /-->
+				</div>
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group -->
+			<div class="wp-block-group">
+				<div class="wp-block-group__inner-container">
+					<!-- wp:heading -->
+					<h2>Footer</h2>
+					<!-- /wp:heading -->
+				</div>
+			</div>
+			<!-- /wp:group -->
+		</code></pre>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>Block-Based Theme<br>Block Templates</h2>
+		<p>Very different than how we create templates now, in that they do not have typical post_content.</p>
+		<aside class="notes">
+		</aside>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>Theme Blocks</h2>
+		<img width="250" height="300" data-src="assets/post-blocks.png" alt="post-blocks-inserter">
+		<p>Made specifically for block-based themes, they provide the dynamic content areas like post_content previously displayed from the_loop.</p>
+		<aside class="notes">
+			Blocks like Site Title block or the new Navigation Block are context specific and would be used in your site’s header while your Single Block Template may include a Post Title and a Post Content block. The point is each page componoent will be created using blocks.
+		</aside>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>Theme Blocks</h2>
+		<p class="fragment fade-in-then-semi-out">Post Content</p>
+		<p class="fragment fade-in-then-semi-out">Post Author</p>
+		<p class="fragment fade-in-then-semi-out">Post Comments Count</p>
+		<p class="fragment fade-in-then-semi-out">Post Comments Form</p>
+		<p class="fragment fade-in-then-semi-out">Post Excerpt</p>
+		<p class="fragment fade-in-then-semi-out">Post Featured Image</p>
+		<p class="fragment fade-in-then-semi-out">Post Tags</p>
+		<aside class="notes">
+			Some examples include...
+			
+			and we can see now the molecules of Atomic design bubbling to the surface with very granular blocks that can be nested into large molecules or components.
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>What is Full Site Editing?</h2>
+		<img width="400" height="220" data-src="assets/full-site-editing.png" alt="full-site-editing-example">
+		<p>An evolution of the editing experience allowing all areas of the site including header, footer, navigation to be edited from the Admin Dashboard. You can test it from the Site Editor Beta under the experimental flag in the Gutenberg Plugin. 
+		</p>
+		<aside class="notes">
+			It creates a mini sandbox of a proposed version of the editor. It's not a part of Core and should not be used on production.
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Creating Block Theme Templates</h2>
+		<p class="fragment fade-in-then-semi-out">1 > Create new under Appearance/Template Parts </p>
+		<p class="fragment fade-in-then-semi-out">2 > Apply styling using the editor</p>
+		<p class="fragment fade-in-then-semi-out">3 > Add block style variations and theme CSS </p>
+		<p class="fragment fade-in-then-semi-out">4 > Copy and paste code from code editor<br>into an .html file saved in <br>block-templates-parts folder
+		</p>
+		<aside class="notes">
+			Notes here
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Progressive Enhancements</h2>
+		<p class="fragment fade-in-then-semi-out">Block Theme Templates share the same naming convention as current theme structures and represent another layer on top of the current template hierarchy.</p>
+		<p class="fragment fade-in-then-semi-out">This could allow theme authors to make progressive enhancements using both html and php page templates if necessary.  </p>
+		</p>
+		<aside class="notes">
+			Notes here
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>More Power Mr. Scott</h2>
+		<p>FSE could put a lot of design control into the hands of the user — both a positive and a negative.</p>
+		</p>
+		<aside class="notes">
+			If you are a theme developer you might be thinking what does this mean for theme building, are themes necessary? And the answer is a resounding yes, what that them looks like however, will be different however than what we see today.
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Naked Template</h2>
+		<img width="375" height="550" data-src="assets/fse-listing-frontend.jpg" alt="full-site-editing-listing">
+		<aside class="notes">
+			This page was created with the FSE editor using a base theme with minimal CSS and without theme supports. I'm puruposely showing the naked template to illustrate without the supports and styling, the end result won't be front-end ready. There is still a world of possibilites for what theme creation will look like in this future. And it's up to us a community to create the best experience for WordPress users.
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Global Styles</h2>
+		<p>Global Styles is currently in development and will allow for styling across a theme.</p>
+		<p><a href="https://github.com/WordPress/gutenberg/projects/40"><i class="fa fa-github"></i></a></p>
+
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Caveats</h2>
+		<p>Nothing is set in stone. The more we test and iterate the stronger the experience will become.</p>
+		<aside class="notes">
+			As experimental features that means this is just the beginning of how things could work.
+		</aside>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>Theme Experiments</h2>
+		<p><a href="https://github.com/WordPress/theme-experiments"><i class="fa fa-github"></i></a></p>
+		<p>Join the fun.</p>
+		<aside class="notes">
+			Want to find out more? You can get started by visiting this repo and adding your own experiments. 
+		</aside>	
+	</section>
+
+	<section data-background="assets/sidetrack-sky.jpg">
+		<h1 class="groovy-bold">Start Learning</h1>
+	</section>
+
+	<!-- Shuttle to Enterprise -->
+	<section >
+		<small>Start Learning</small>
+		<iframe data-src="https://open.spotify.com/embed/playlist/0vGnbBxazMABIrpESWtNuF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"> data-preload></iframe>
+	</section>
+
+	<section>
+		<small>Start Learning</small>
+		<h2>Get the Resources</h2>
+		<ul>
+			<li><a href="https://developer.wordpress.org/block-editor/">Block Editor Handbook</a></li>
+			<li><a href="https://developer.wordpress.org/block-editor/developers/themes/">Themeing for the Block Editor</a></li>
+			<li><a href="https://developer.wordpress.org/block-editor/developers/themes/block-based-themes/">Block Based Themes</a></li>
+			<li><a href="https://themeshaper.com/2020/01/21/creating-a-block-based-theme-using-block-templates/">Block Based Themes & Theme Templates</a></li>
+			<li><a href="https://gutenbergtimes.com/theme-templates-full-site-editing-experience-enrique-piqueras/">Theme Templates & Full Site Editing</a></li>
+			<li><a href="https://wp.me/p2AvED-gM2">Block Areas</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<small>Start Learning</small>
+		<h2>Review the Projects & PRs</h2>
+		<ul>
+			<li><a href="https://github.com/WordPress/gutenberg/projects/40">Global Styles</a></li>
+			<li><a href="https://github.com/WordPress/gutenberg/projects/35">Full Site Editing</a></li>
+			<li><a href="https://github.com/WordPress/gutenberg/projects/41">Block Patterns</a></li>
+			<li><a href="https://github.com/WordPress/gutenberg/issues/20449">Plugins & Global Styles</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<small>Start Learning</small>
+		<h2>Shout Outs</h2>
+		<ul>
+			<li><a href="">Jeff Ong</a></li>
+			<li><a href="">Kjell Reigstad</a></li>
+			<li><a href="">Enrique Piqueras</a></li>
+			<li><a href="">Riad Benguella</a></li>
+		</ul>
+	</section>
+
+	<section style="text-align: left;">
+		<h1>Thank You</h1>
+		<div> <h6>Get the slides on</h6>
+			<ul>
+				<a href="https://sidetrack.studio">Sidetrack Studio</a></br>
+				<a href="https://github.com/SidetrackStudio">Sidetrack GitHub</a></br>
+				<a href="https://github.com/itsjusteileen">itsjusteileen GitHub</a></br>
+				<a href="https://itsjusteileen.sidetrack.studio">itsjusteileen</a>
+			</ul>
+		</div>
+		<ul class="social-icons">
+			<li><a href="https://twitter.com/itsjusteileen"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://github.com/itsjusteileen"><i class="fa fa-github"></i></a></li>
+			<li><a href="https://profiles.wordpress.org/itsjusteileen/"><i class="fa fa-wordpress"></i></a></li>
+		</ul>
+	</section>
+
+	</div>
+
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js' },
+				{ src: 'plugin/search/search.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			
+
+		</script>
+
+	</body>
+	</html>
