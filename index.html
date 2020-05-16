@@ -141,6 +141,21 @@
 					<p class="fragment fade-in-then-semi-out">Responsive Embeds</p>
 					<p class="fragment fade-in-then-semi-out">Frontend & Editor Styles</p>
 					<p class="fragment fade-in-then-semi-out">Dark Mode</p>
+					<aside class="notes">
+						You'll want to explore all of these options. As I began working in themes for Gutenberg, I started adding the Editor Color Palette and also the opt-in feature for wide_align.
+					</aside>
+				</section>
+
+				<section data-background-video="assets/theme-parity.mp4" data-background-color="#000000">
+					<aside class="notes">
+						Here's what enabling those options look like after we add them to the starter theme.
+					</aside>
+				</section>
+
+				<section data-background-video="assets/theme-parity.mp4" data-background-color="#000000">
+					<aside class="notes">
+						Here's what enabling those options look like after we add them to the starter theme.
+					</aside>
 				</section>
 
 				<section>
@@ -171,18 +186,18 @@
 
 			<section>
 				<small>Theme Supports</small>
-				<h2>Default Block Styles</h2>
-				<pre><code class="hljs html" data-line-numbers="1">add_theme_support( 'wp-block-styles' );</code></pre>
-				<p>Core blocks include default styles. The styles are enqueued for editing but are not enqueued for viewing unless the theme opts-in to the core styles.</p>
-			</section>
-
-			<section>
-				<small>Theme Supports</small>
 				<h2>Wide Alignment</h2>
 				<pre><code class="hljs" data-trim data-line-numbers="1">
 					add_theme_support( 'align-wide' );
 				</code></pre>
 				<p>Some blocks such as the image block have the possibility to define a “wide” or “full” alignment by adding the corresponding classname to the block’s wrapper ( alignwide or alignfull ).</p>
+			</section>
+
+			<section>
+				<small>Theme Supports</small>
+				<h2>Default Block Styles</h2>
+				<pre><code class="hljs html" data-line-numbers="1">add_theme_support( 'wp-block-styles' );</code></pre>
+				<p>Core blocks include default styles. The styles are enqueued for editing but are not enqueued for viewing unless the theme opts-in to the core styles.</p>
 			</section>
 
 			<section>
@@ -619,6 +634,55 @@
 			<aside class="notes">
 				Hick's Law in action. By eliminating the options, we make it easier for the admin user to post this real estate listing onto their site.
 			</aside>
+		</section>
+
+		<section>
+			<small>Block Patterns</small>
+			<h2>Creating Block Patterns</h2>
+			<p>Patterns are predefined block layouts for a page or section ready to insert.</p>
+			<aside class="notes">
+				
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Patterns</small>
+			<h2>New and Noteworthy</h2>
+			<p class="fragment fade-in-then-semi-out">New API introduced in Gutenberg 7.8</p>
+			<p class="fragment fade-in-then-semi-out">Experimental and subject to change.</p>
+			<p class="fragment fade-in-then-semi-out">Not a part of core...yet.</p>
+			<p class="reference"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">WordPress Block Editor Handbook</a></p>
+		</section>
+
+		<section>
+			<small>Block Patterns</small>
+			<h2>How they work</h2>
+			<p>The register_block_pattern function receives the name of the pattern as the first argument and an array describing properties of the pattern as the second argument.</p>
+			<p>The properties of the style array must include name and label:</p>
+			<p class="fragment fade-in-then-semi-out">title: A human-readable title for the pattern.</p>
+			<p class="fragment fade-in-then-semi-out">content: Raw HTML content for the pattern.</p>
+		</section>
+
+		<section>
+			<small>Block Patterns</small>
+			<h2>Custom Post Type</h2>
+			<pre><code class="hljs">
+					function sidetreet_register_block_patterns() {
+						if ( function_exists( 'register_pattern' ) ) {
+							/**
+							* Register block patterns
+							*/
+							register_pattern(
+								'sidestreet-listing-page-pattern',
+								array(
+									'title'   => __( 'Intro paragraph with two columns', 'sidestreet-listing-page-pattern' ),
+									'content' => "<!-- wp:group -->\n<div class=\"wp-block-group\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns -->\n<div class=\"wp-block-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:heading {\"level\":3} -->\n<h3>h3 heading/features</h3>\n<!-- /wp:heading -->\n\n<!-- wp:columns -->\n<div class=\"wp-block-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>h4 heading/gallery</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery -->\n<figure class=\"wp-block-gallery columns-0 is-cropped\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery --></div></div>\n<!-- /wp:group -->\n\n<!-- wp:cover {\"align\":\"full\"} -->\n<div class=\"wp-block-cover alignfull has-background-dim\"><div class=\"wp-block-cover__inner-container\"></div></div>\n<!-- /wp:cover -->",
+								)
+							);
+						}
+					}
+					add_action( 'init', 'sidetreet_register_block_patterns' );
+			</code></pre>
 		</section>
 
 		<section>
