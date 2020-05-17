@@ -108,17 +108,13 @@
 				<section>
 					<img width="400" height="700" data-src="assets/block-template-cpt-final.png" alt="block-template-cpt-final"></a>
 					<aside class="notes">
-						For illustration purposes, today we'll be building a simple example for Sidestreet Realty. I'll show you how I modified a starter theme, added block templates and made accomodations for post meta. 
+						Today we'll be building a simple example for Sidestreet Realty. I'll show you how I modified a starter theme, added block templates and made accomodations for post meta. 
 					</aside>
 				</section>
 
-			<section>
-				<div>
-					<h2>What Makes Gutenberg Enabled Themes Different?</h2>
-					<p class="fragment fade-in-then-semi-out">Theme Supports</p>
-					<p class="fragment fade-in-then-semi-out">Block Templates</p>
-				</div>
-			</section>
+				<section data-background="assets/sidetrack-sky.jpg">
+					<h1 class="groovy-frontier">The Future<br>...Now.</h1>
+				</section>
 
 			<section>
 				<section>
@@ -143,12 +139,6 @@
 					<p class="fragment fade-in-then-semi-out">Dark Mode</p>
 					<aside class="notes">
 						You'll want to explore all of these options. As I began working in themes for Gutenberg, I started adding the Editor Color Palette and also the opt-in feature for wide_align.
-					</aside>
-				</section>
-
-				<section data-background-video="assets/theme-parity.mp4" data-background-color="#000000">
-					<aside class="notes">
-						Here's what enabling those options look like after we add them to the starter theme.
 					</aside>
 				</section>
 
@@ -415,15 +405,6 @@
 
 		<section>
 			<small>Block Templates</small>
-			<h2>Block Templates <br>vs Block Patterns</h2>
-			<p>Block Patterns are a layout grid that allow an admin user to quickly get a layout.</p>
-			<aside class="notes">
-				These are just coming into use, with new patterns being developed.  
-			</aside>
-		</section>
-
-		<section>
-			<small>Block Templates</small>
 			<h2>How do we add Block Templates to our Themes?</h2>
 			<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">option 1 </span>Use PHP to associate the Block Template<br>with a Post Type</p>
 			<p class="fragment fade-in" style="color:#B63BE2">OR</p>
@@ -528,35 +509,35 @@
 		</section>
 
 		<section>
-			<small>Block Templates</small>
-			<h2>Custom Post Type</h2>
-			<pre><code class="hljs" data-trim data-line-numbers="1">
-				function sidetrack_register_property_post_type() {
-					$args = array(
-						'public' => true,
-						'label'  => 'Property',
-						'template_lock' => all,
-						'show_in_rest' => true,
-						'template' => array(
-							array( 'core/image', array(
-							'align' => 'left',
+				<small>Block Templates</small>
+				<h2>Custom Post Type</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1">
+					function sidetrack_register_property_post_type() {
+						$args = array(
+							'public' => true,
+							'label'  => 'Property',
+							'template_lock' => all,
+							'show_in_rest' => true,
+							'template' => array(
+								array( 'core/image', array(
+								'align' => 'left',
+								) ),
+								array( 'core/heading
+								', array(
+								'align' => 'right',
+								) ),
+								array( 'core/heading', array(
+								'placeholder' => 'Price',
+								) ),
+								array( 'core/paragraph', array(
+								'placeholder' => 'Property Description',
 							) ),
-							array( 'core/heading
-							', array(
-							'align' => 'right',
-							) ),
-							array( 'core/heading', array(
-							'placeholder' => 'Price',
-							) ),
-							array( 'core/paragraph', array(
-							'placeholder' => 'Property Description',
-						) ),
-					),
-				);
-				register_post_type( 'property', $args );
-			}
-			add_action( 'init', 'sidetrack_register_property_post_type' );
-		</code></pre>
+						),
+					);
+					register_post_type( 'property', $args );
+				}
+				add_action( 'init', 'sidetrack_register_property_post_type' );
+			</code></pre>
 		</section>
 
 		<section>
@@ -635,50 +616,55 @@
 				Hick's Law in action. By eliminating the options, we make it easier for the admin user to post this real estate listing onto their site.
 			</aside>
 		</section>
+	</section>
 
+	<section>
 		<section>
 			<div>
 				<h2>Block Patterns</h2>
 			</div>
 		</section>
 
-		<section>
 			<section>
 				<small>Block Patterns</small>
-				<h2>Creating Block Patterns</h2>
+				<h2>New and Noteworthy</h2>
 				<p>Patterns are predefined block layouts for a page or section ready to insert.</p>
 				<aside class="notes">
-					
+					There are a handful of patterns that ship with the Gutenberg plugin but theme builders can add there own.
 				</aside>
 			</section>
 
 			<section>
 				<small>Block Patterns</small>
-				<h2>New and Noteworthy</h2>
+				<h2>Creating Block Patterns</h2>
 				<p class="fragment fade-in-then-semi-out">New API introduced in Gutenberg 7.8</p>
 				<p class="fragment fade-in-then-semi-out">Experimental and subject to change.</p>
 				<p class="fragment fade-in-then-semi-out">Not a part of core...yet.</p>
-				<p class="reference"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">WordPress Block Editor Handbook</a></p>
+				<p class="fragment fade-in" style="font-size:1rem; float:right;"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">Ref:WordPress Block Editor Handbook</a></p>
 			</section>
 
 			<section>
 				<small>Block Patterns</small>
-				<h2>How they work</h2>
-				<p>The register_block_pattern function receives the name of the pattern as the first argument and an array describing properties of the pattern as the second argument.</p>
+				<h2>Register Block Paterns</h2>
+				<p>The <span style="color:#B63BE2">register_block_pattern</span> function receives the name of the pattern as the first argument and an array describing properties of the pattern as the second argument.</p>
+				<p style="font-size:1rem; float:right;"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">Ref:WordPress Block Editor Handbook</a></p>
+			</section>
+
+			<section>
+				<small>Block Patterns</small>
+				<h2>Register Block Paterns</h2>
 				<p>The properties of the style array must include name and label:</p>
-				<p class="fragment fade-in-then-semi-out">title: A human-readable title for the pattern.</p>
-				<p class="fragment fade-in-then-semi-out">content: Raw HTML content for the pattern.</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">title:</span>A human-readable title for the pattern.</p>
+				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">content:</span>Raw HTML content for the pattern.</p>
+				<p style="font-size:1rem; float:right;"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">Ref:WordPress Block Editor Handbook</a></p>
 			</section>
 
 			<section>
 				<small>Block Patterns</small>
-				<h2>Custom Post Type</h2>
-				<pre><code class="hljs">
+				<h2>Register Block Paterns</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="">
 						function sidetreet_register_block_patterns() {
 							if ( function_exists( 'register_pattern' ) ) {
-								/**
-								* Register block patterns
-								*/
 								register_pattern(
 									'sidestreet-listing-page-pattern',
 									array(
@@ -694,107 +680,148 @@
 
 			<section>
 				<small>Block Patterns</small>
-				<img width="400" height="450" data-src="assets/block-pattern.png" alt="block-pattern"></a>
+				<img width="800" height="450" data-src="assets/block-pattern.png" alt="block-pattern"></a>
 				<aside class="notes">
-					The block pattern is available in the inspector to add to the page.
+					Now the block pattern is available in the inspector to add to the page.
 				</aside>
 			</section>
+
+			<section>
+				<small>Block Templates</small>
+				<h2>Block Templates <br>vs Block Patterns</h2>
+				<p><span style="color:#B63BE2">Block Templates</span> are a layout grid that allow an admin user to quickly get a layout.</p>
+				</br>
+				<p><span style="color:#B63BE2">Block Patterns</span> are a combination of blocks used like a block. </p>
+			</section>
+
+			<section>
+				<small>Block Patterns</small>
+				<h2>Faceoff</h2>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Block Pattern</th>
+							<th>Block Template</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span style="color:#B63BE2">Resuable</span></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><span style="color:#B63BE2">Lockable</span></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><span style="color:#B63BE2">Nestable</span></td>
+							<td>Yes</td>
+							<td>Sort of</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>	
 		</section>
 
 		<section>
-			<div>
-				<h2>Block Meta</h2>
-			</div>
-		</section>
+			<section>
+				<div>
+					<h2>Block Meta</h2>
+				</div>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>So Meta</h2>
-			<p>The rise of the meta box came about from the limitation of structuring content in the Classic WordPress editor.</p>
-			<aside class="notes">
-				This was a powerful tool allowing theme creators to customize how admin users added content to their site that could be both stored for use in other places as well as displayed on the front end. Using tools like ACF, theme authors could make it easier to put together the Real Estate Lising.
-			</aside>
-		</section>
+			<section>
+				<small>Block Meta</small>
+				<h2>So Meta</h2>
+				<p>The rise of the meta box came about from the limitation of structuring content in the Classic WordPress editor.</p>
+				<aside class="notes">
+					This was a powerful tool allowing theme creators to customize how admin users added content to their site that could be both stored for use in other places as well as displayed on the front end. Using tools like ACF, theme authors could make it easier to put together the Real Estate Lising.
+				</aside>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>So Meta</h2>
-			<p>Using meta boxes to create page layouts has direct ramifcations on your database.</p>
-				<p class="fragment fade-in-then-semi-out">It moves what should be post_content into meta.</p>
-				<p class="fragment fade-in-then-semi-out">item one</p>
-				<p class="fragment fade-in-then-semi-out">item two</p>
-				<p class="fragment fade-in-then-semi-out">item three</p>
-			<aside class="notes">
-				While layout patterns like Team Bios and Events make sense as meta data, in some cases, I've seen theme authors using meta boxes to define page layout. While useful at the time, it block theme development we are now able to keep post_content where it belongs.
-			</aside>
-		</section>
+			<section>
+				<small>Block Meta</small>
+				<h2>So Meta</h2>
+				<p>Using meta boxes to create page layouts has direct ramifcations on your database.</p>
+					<p class="fragment fade-in-then-semi-out">It moves what should be post_content into meta.</p>
+					<p class="fragment fade-in-then-semi-out">item one</p>
+					<p class="fragment fade-in-then-semi-out">item two</p>
+					<p class="fragment fade-in-then-semi-out">item three</p>
+				<aside class="notes">
+					While layout patterns like Team Bios and Events make sense as meta data, in some cases, I've seen theme authors using meta boxes to define page layout. While useful at the time, it block theme development we are now able to keep post_content where it belongs.
+				</aside>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>Creating Content for Meta</h2>
-			<p>Content created as meta no longer needs to be, it can be added directly to the page with blocks.</p>
-		</section>
+			<section>
+				<small>Block Meta</small>
+				<h2>Creating Content for Meta</h2>
+				<p>Content created as meta no longer needs to be, it can be added directly to the page with blocks.</p>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>Meta as a Block</h2>
-			<p>Now when you need to add content to be stored as meta, build your block with <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/#meta">block attributes</a></p>
-		</section>
+			<section>
+				<small>Block Meta</small>
+				<h2>Meta as a Block</h2>
+				<p>Now when you need to add content to be stored as meta, build your block with <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/#meta">block attributes</a></p>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>Meta as a Block</h2>
-			<pre><code class="hljs" data-trim data-line-numbers="">
-				attributes: {
-					image: {
-						type: 'object',
-						source: 'meta',
-						meta: 'propertyimg'
-					},
-					price: {
-						type: 'string',
-						source: 'meta',
-						meta: 'price'
-					},
-				},				
-			</code></pre>
-			<aside class="notes">
-				
-			</aside>
-		</section>
+			<section>
+				<small>Block Meta</small>
+				<h2>Meta as a Block</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="">
+					attributes: {
+						image: {
+							type: 'object',
+							source: 'meta',
+							meta: 'propertyimg'
+						},
+						price: {
+							type: 'string',
+							source: 'meta',
+							meta: 'price'
+						},
+					},				
+				</code></pre>
+				<aside class="notes">
+					
+				</aside>
+			</section>
 
-		<section>
-			<small>Block Meta</small>
-			<h2>Meta as a Block</h2>
-			<pre><code class="hljs" data-trim data-line-numbers="">
-				function sidetrack_property_meta() {
-					register_post_meta(
-						'post',
-						'image',
-						array(
-							'type'          => 'string',
-							'single'        => true,
-							'show_in_rest'  => true,
-							'auth_callback' => function() {
-								return current_user_can( 'edit_posts' );
-								},
-						)
-					);
-					register_post_meta(
-						'post',
-						'price',
-						array(
-							'type'          => 'string',
-							'single'        => true,
-							'show_in_rest'  => true,
-							'auth_callback' => function() {
-								return current_user_can( 'edit_posts' );
-								},
-						)
-					);
-				}
-				add_action( 'init', 'sidetrack_property_meta' );
-			</code></pre>
+			<section>
+				<small>Block Meta</small>
+				<h2>Meta as a Block</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="">
+					function sidetrack_property_meta() {
+						register_post_meta(
+							'post',
+							'image',
+							array(
+								'type'          => 'string',
+								'single'        => true,
+								'show_in_rest'  => true,
+								'auth_callback' => function() {
+									return current_user_can( 'edit_posts' );
+									},
+							)
+						);
+						register_post_meta(
+							'post',
+							'price',
+							array(
+								'type'          => 'string',
+								'single'        => true,
+								'show_in_rest'  => true,
+								'auth_callback' => function() {
+									return current_user_can( 'edit_posts' );
+									},
+							)
+						);
+					}
+					add_action( 'init', 'sidetrack_property_meta' );
+				</code></pre>
+			</section>
 		</section>
 	</section>
 
