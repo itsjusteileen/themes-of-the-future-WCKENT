@@ -70,7 +70,7 @@
 							</defs>
 							<rect class="shape" height="60" width="320" stroke="url(#gradient)" />
 						</svg>
-						<button class="btn" onclick="location.href='themes of the future wcsatx/index.html#/3';">Let's Get Started</button>
+						<button class="btn" onclick="window.location.href = 'https://itsjusteileen.github.io/themes-of-the-future-WCKENT/#/3';"> Let's Get Started</button>
 					</div>
 				</div>
 			</section>
@@ -397,7 +397,7 @@
 		<section>
 			<small>Block Templates</small>
 			<h2>Block Templates <br>vs Page Templates</h2>
-			<p>Block Templates impose structure on post content, <br> they are unrelated to page templates found in themes.</p>
+			<p>Block Templates impose structure on post content, <br> and are unrelated to page templates created using doc block declaration.</p>
 			<aside class="notes">
 				They are not what you would see in the dropdown of templates under Documents in the Inspector Controls. You might want to add block templates to a page template or post template, and we will see a few ways this can be accomplished as we look at each method used to create block templates. So let's get started.  
 			</aside>
@@ -405,10 +405,11 @@
 
 		<section>
 			<small>Block Templates</small>
-			<h2>How do we add Block Templates to our Themes?</h2>
+			<h2>Declaring Block Templates</h2>
 			<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">option 1 </span>Use PHP to associate the Block Template<br>with a Post Type</p>
 			<p class="fragment fade-in" style="color:#B63BE2">OR</p>
 			<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">option 2 </span>Use JS to create Block Template as a freestanding block that can be inserted anywhere.</p>
+			<p style="font-size:1rem; float:right;"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-templates/#api">Ref:WordPress Block Editor Handbook</a></p>
 		</section>
 
 		<section>
@@ -428,7 +429,7 @@
 			</code></pre>
 			<p>Create a function that adds an array of blocks for admin users to populate.</p>
 			<aside class="notes">
-				This function can be added as shown here which will create the block template on a dynamic post or you can change 'post' to 'page' to add a block template to a static page.
+				This function can be added with this code which will create the block template on a dynamic post or you can change 'post' to 'page' to add a block template to a static page.
 			</aside>
 		</section>
 
@@ -538,6 +539,9 @@
 				}
 				add_action( 'init', 'sidetrack_register_property_post_type' );
 			</code></pre>
+			<aside class="notes">
+				<p>A custom post type can register its own template.</p>
+			</aside>
 		</section>
 
 		<section>
@@ -828,11 +832,11 @@
 	<!--Are you outta your cornfed mind?-->
 
 	<section data-background="assets/sidetrack-sky.jpg">
-		<h1 class="groovy-frontier">The Future<br>...Now.</h1>
+		<h1 class="groovy-frontier">To Boldly Go...</h1>
 	</section>
 
 	<section>
-		<h2>To Boldy Go</h2>
+		<h2>Block Based Themes</h2>
 		<p>What will applying the block experience <br>across WordPress look like? <br>How is this accomplished?</p>
 		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Themes</p>
 		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Theme Templates</p>
@@ -844,6 +848,23 @@
 		<small>Block-Based Themes</small>
 		<h2>What is a Block-Based Theme?</h2>
 		<p>A WordPress theme created with HTML files built entirely with blocks. Block-based themes are minimal html structures that provide the containers for rendering blocks in the browser.</p>
+	</section>
+
+	<section>
+		<small>Full Site Editing</small>
+		<h2>What is Full Site Editing?</h2>
+		<img width="400" height="220" data-src="assets/full-site-editing.png" alt="full-site-editing-example">
+		<p>An evolution of the editing experience allowing all areas of the site including header, footer, navigation to be edited from the Admin Dashboard. 
+		</p>
+		<aside class="notes">
+			It creates a mini sandbox of a proposed version of the editor. It's not a part of Core and should not be used on production.
+		</aside>
+	</section>
+
+	<section>
+		<small>Block-Based Themes</small>
+		<h2>What is a Block-Based Theme?</h2>
+		<p>	You can test it from the Site Editor Beta under the experimental flag in the Gutenberg Plugin.</p>
 	</section>
 
 	<section>
@@ -931,17 +952,6 @@
 			Some examples include...
 			
 			and we can see now the molecules of Atomic design bubbling to the surface with very granular blocks that can be nested into large molecules or components.
-		</aside>
-	</section>
-
-	<section>
-		<small>Full Site Editing</small>
-		<h2>What is Full Site Editing?</h2>
-		<img width="400" height="220" data-src="assets/full-site-editing.png" alt="full-site-editing-example">
-		<p>An evolution of the editing experience allowing all areas of the site including header, footer, navigation to be edited from the Admin Dashboard. You can test it from the Site Editor Beta under the experimental flag in the Gutenberg Plugin. 
-		</p>
-		<aside class="notes">
-			It creates a mini sandbox of a proposed version of the editor. It's not a part of Core and should not be used on production.
 		</aside>
 	</section>
 
