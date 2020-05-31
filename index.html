@@ -95,6 +95,7 @@
 					<small>Point of View</small>
 					<h2>What is Gutenberg Enabled?</h2>
 					<p>Any theme that takes advantage of Gutenberg Theme Supports for Block rendering in the Editor and on the Front End. </p>
+					<aside class="notes">WP Tavern reported recently, only 132 themes out of 7,455 themes listed block editor styles as a feature.</aside>
 				</section>
 
 				<section>
@@ -144,7 +145,7 @@
 
 				<section data-background-video="assets/theme-parity.mp4" data-background-color="#000000">
 					<aside class="notes">
-						Here's what enabling those options look like after we add them to the starter theme.
+						One of the biggest advantages shown in this quick screencast is the ability to flip between themes with no disruption to the block content on the page.
 					</aside>
 				</section>
 
@@ -226,7 +227,7 @@
 
 			<section>
 				<small>Theme Supports</small>
-				<h2>Deep Dive</h2>
+				<h2>Color Palettes Deep Dive</h2>
 				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">name</span> is a human-readable label that appears in the tooltip and provides a meaningful color description.</p>
 				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">slug</span> is a unique identifier used to generate the CSS classes for the block editor color palette.</p>
 				<p class="fragment fade-in-then-semi-out"><span style="color:#B63BE2">color</span> is the hexadecimal code to specify the color.</p>
@@ -363,6 +364,8 @@
 		</section>
 	</section>
 
+	<!-- More Power Mr. Scott -->
+
 	<section>
 		<section>
 			<div>
@@ -380,9 +383,8 @@
 			<small>Block Templates</small>
 			<h2>Why Use Block Templates?</h2>
 			<p class="fragment fade-in-then-semi-out">Block templates allow theme builders to provide the admin user with guiderails to add content.</p>
-			<br><p class="fragment fade-in-then-semi-out">They make it easier for the user to get content on the page by limiting the design choices they need to make.</p>
 			<aside class="notes">
-				Beyond preserving the integrity of the design, the primary role of block templates provides better UX/UI. 
+				Beyond preserving the integrity of the design, block templates provides better UX/UI by limiting design choices to make it easier for the admin. 
 			</aside>
 		</section>
 
@@ -397,9 +399,9 @@
 		<section>
 			<small>Block Templates</small>
 			<h2>Block Templates <br>vs Page Templates</h2>
-			<p>Block Templates impose structure on post content, <br> and are unrelated to page templates created using doc block declaration.</p>
+			<p>Block Templates impose structure on post content, <br> and can be used independently or within current page templates.</p>
 			<aside class="notes">
-				They are not what you would see in the dropdown of templates under Documents in the Inspector Controls. You might want to add block templates to a page template or post template, and we will see a few ways this can be accomplished as we look at each method used to create block templates. So let's get started.  
+				There are several ways to build Block Templates and methods for using. Let's explore how they work.  
 			</aside>
 		</section>
 
@@ -419,17 +421,37 @@
 				function sidetrack_register_template() {
 					$post_type_object = get_post_type_object( 'post' );
 					$post_type_object->template = array(
-					array( 'core/media-text' ),
-					array( 'core/heading' ),
-					array( 'core/list' ),
-					array( 'core/paragraph' ),
+						array( 'core/media-text' ),
+						array( 'core/heading' ),
+						array( 'core/list' ),
+						array( 'core/paragraph' ),
 					);
 				}
 				add_action( 'init', 'sidetrack_register_template' );
 			</code></pre>
-			<p>Create a function that adds an array of blocks for admin users to populate.</p>
+			<p>Creates a function that adds an array of blocks for admin users to populate.</p>
 			<aside class="notes">
-				This function can be added with this code which will create the block template on a dynamic post or you can change 'post' to 'page' to add a block template to a static page.
+				This function creates a block template to the regular post or you can change 'post' to 'page' to add a block template to the static pages of your site.
+			</aside>
+		</section>
+
+		<section>
+			<small>Block Templates</small>
+			<h2>Using Within a Page Template</h2>
+			<pre><code class="hljs" data-trim data-line-numbers="2">
+				function sidetrack_register_page_template() {
+					$post_type_object = get_post_type_object( 'post' );
+					$post_type_object->template = array(
+						array( 'core/media-text' ),
+						array( 'core/heading' ),
+						array( 'core/list' ),
+						array( 'core/paragraph' ),
+					);
+				}
+				add_action( 'init', 'sidetrack_register_page_template' );
+			</code></pre>
+			<aside class="notes">
+				Similarly, you can use $post_type_object to register a set of blocks for a specific page template.
 			</aside>
 		</section>
 
@@ -493,9 +515,7 @@
 					</code>
 				</pre>
 			<aside class="notes">
-				Example code from the Developer handbook, which is slightly outdated. You might prefer to try our method we use in our studio.
-
-				In this example we use wp-scripts which is now the preferred method and uses the npm script created and maintained by the #core-editor team. You'll notice we're adding the block template to the block inserter which provides a great amount of flexibility allowying admins to add the block template to a page or post.
+				The code here is the version we use in our studio, usding wp-scripts which is now the preferred method and uses the npm script created and maintained by the #core-editor team. This is an updated version of what you will find in the handbook.
 
 				Please NOTE: Reveal.js is messing with Capitalization and the closing JSX
 			</aside>
@@ -505,7 +525,7 @@
 			<small>Block Templates</small>
 			<img width="400" height="450" data-src="assets/block-template-block.png" alt="block-template-block"></a>
 			<aside class="notes">
-				Now we see we have a custom block that is present in the inserter tool for a user to add a block template anywhere. 
+				Now we see we have a custom block that is present in the inserter tool which provides a great amount of flexibility allowying admins to add this template to a page or post.
 			</aside>
 		</section>
 
@@ -550,7 +570,7 @@
 			<pre><code class="hljs" data-trim data-line-numbers="1">
 				'show_in_rest' => true,',
 			</code></pre>
-			<p>Add placeholder text</p>
+			<p>Ensures attribute is shown in block editor.</p>
 		</section>
 
 		<section>
@@ -632,16 +652,16 @@
 			<section>
 				<small>Block Patterns</small>
 				<h2>New and Noteworthy</h2>
-				<p>Patterns are predefined block layouts for a page or section ready to insert.</p>
+				<p>Patterns are predefined block layouts for a page ready to insert.</p>
 				<aside class="notes">
-					There are a handful of patterns that ship with the Gutenberg plugin but theme builders can add there own.
+					There are a handful of patterns that ship with the Gutenberg plugin but you can also add your own.
 				</aside>
 			</section>
 
 			<section>
 				<small>Block Patterns</small>
 				<h2>Creating Block Patterns</h2>
-				<p class="fragment fade-in-then-semi-out">New API introduced in Gutenberg 7.8</p>
+				<p class="fragment fade-in-then-semi-out">New API introduced in Gutenberg 7.8.</p>
 				<p class="fragment fade-in-then-semi-out">Experimental and subject to change.</p>
 				<p class="fragment fade-in-then-semi-out">Not a part of core...yet.</p>
 				<p class="fragment fade-in" style="font-size:1rem; float:right;"><a href="https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/">Ref:WordPress Block Editor Handbook</a></p>
@@ -667,18 +687,18 @@
 				<small>Block Patterns</small>
 				<h2>Register Block Paterns</h2>
 				<pre><code class="hljs" data-trim data-line-numbers="">
-						function sidetreet_register_block_patterns() {
-							if ( function_exists( 'register_pattern' ) ) {
-								register_pattern(
-									'sidestreet-listing-page-pattern',
+						function sidetreet_register_block_pattern() {
+							if ( function_exists( 'register_block_pattern' ) ) {
+								register_block_pattern(
+									'sidestreet-listing-pattern',
 									array(
-										'title'   => __( 'Intro paragraph with two columns', 'sidestreet-listing-page-pattern' ),
+										'title'   => __( 'Intro paragraph with two columns', 'sidestreet-listing-pattern' ),
 										'content' => "<!-- wp:group -->\n<div class=\"wp-block-group\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns -->\n<div class=\"wp-block-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:heading {\"level\":3} -->\n<h3>h3 heading/features</h3>\n<!-- /wp:heading -->\n\n<!-- wp:columns -->\n<div class=\"wp-block-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>h4 heading/gallery</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery -->\n<figure class=\"wp-block-gallery columns-0 is-cropped\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery --></div></div>\n<!-- /wp:group -->\n\n<!-- wp:cover {\"align\":\"full\"} -->\n<div class=\"wp-block-cover alignfull has-background-dim\"><div class=\"wp-block-cover__inner-container\"></div></div>\n<!-- /wp:cover -->",
 									)
 								);
 							}
 						}
-						add_action( 'init', 'sidetreet_register_block_patterns' );
+						add_action( 'init', 'sidetreet_register_block_pattern' );
 				</code></pre>
 			</section>
 
@@ -693,11 +713,12 @@
 			<section>
 				<small>Block Templates</small>
 				<h2>Block Templates <br>vs Block Patterns</h2>
-				<p><span style="color:#B63BE2">Block Templates</span> are a layout grid that allow an admin user to quickly get a layout.</p>
+				<p><span style="color:#B63BE2">Block Templates</span> are a predefined set of blocks that can be used programatically.</p>
 				</br>
-				<p><span style="color:#B63BE2">Block Patterns</span> are a combination of blocks used like a block. </p>
+				<p><span style="color:#B63BE2">Block Patterns</span> are a combination of blocks used to produce a layout.</p>
 			</section>
 
+			<!-- Don't worry, fellas. Your secret's safe with me. -->
 			<section>
 				<small>Block Patterns</small>
 				<h2>Faceoff</h2>
@@ -749,26 +770,25 @@
 			<section>
 				<small>Block Meta</small>
 				<h2>So Meta</h2>
-				<p>Using meta boxes to create page layouts has direct ramifcations on your database.</p>
-					<p class="fragment fade-in-then-semi-out">It moves what should be post_content into meta.</p>
-					<p class="fragment fade-in-then-semi-out">item one</p>
-					<p class="fragment fade-in-then-semi-out">item two</p>
-					<p class="fragment fade-in-then-semi-out">item three</p>
+				<p>Using meta boxes to create page layouts has direct ramifcations on your database and where things are stored.</p>
+					<p class="fragment fade-in-then-semi-out">Namely, it moves what should be post_content into meta.</p>
 				<aside class="notes">
-					While layout patterns like Team Bios and Events make sense as meta data, in some cases, I've seen theme authors using meta boxes to define page layout. While useful at the time, it block theme development we are now able to keep post_content where it belongs.
+					While layout patterns like Team Bios and Events make sense as meta data, in some cases, I've seen theme authors using meta boxes to define page layout. While useful at the time, with blocks we are now able to keep post_content where it belongs.
 				</aside>
 			</section>
 
 			<section>
 				<small>Block Meta</small>
-				<h2>Creating Content for Meta</h2>
-				<p>Content created as meta no longer needs to be, it can be added directly to the page with blocks.</p>
+				<h2>So Meta</h2>
+				<p>Similarly, now blocks can take what we want stored as meta and place it instead into post_content.</p>
+				<aside class="notes">
+				</aside>
 			</section>
 
 			<section>
 				<small>Block Meta</small>
 				<h2>Meta as a Block</h2>
-				<p>Now when you need to add content to be stored as meta, build your block with <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/#meta">block attributes</a></p>
+				<p>When you have information that is meta data not post content, you can create a specific block.<a href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/#meta">block attributes</a></p>
 			</section>
 
 			<section>
@@ -836,8 +856,19 @@
 	</section>
 
 	<section>
+		<small>Full Site Editing</small>
+		<h2>What is Full Site Editing?</h2>
+		<img width="400" height="220" data-src="assets/full-site-editing.png" alt="full-site-editing-example">
+		<p>An evolution of the editing experience allowing all areas of the site including header, footer, navigation directly in the editor using blocks. 
+		</p>
+		<aside class="notes">
+			It creates a mini sandbox of a proposed version of the editor. It's not a part of Core and should not be used on production.
+		</aside>
+	</section>
+
+	<section>
 		<h2>Block Based Themes</h2>
-		<p>What will applying the block experience <br>across WordPress look like? <br>How is this accomplished?</p>
+		<p>What will applying the block experience <br>across WordPress look like?</p>
 		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Themes</p>
 		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Block-Based Theme Templates</p>
 		<p class="fragment fade-in-then-semi-out" style="color:#B63BE2">Full Site Editing</p>
@@ -848,17 +879,6 @@
 		<small>Block-Based Themes</small>
 		<h2>What is a Block-Based Theme?</h2>
 		<p>A WordPress theme created with HTML files built entirely with blocks. Block-based themes are minimal html structures that provide the containers for rendering blocks in the browser.</p>
-	</section>
-
-	<section>
-		<small>Full Site Editing</small>
-		<h2>What is Full Site Editing?</h2>
-		<img width="400" height="220" data-src="assets/full-site-editing.png" alt="full-site-editing-example">
-		<p>An evolution of the editing experience allowing all areas of the site including header, footer, navigation to be edited from the Admin Dashboard. 
-		</p>
-		<aside class="notes">
-			It creates a mini sandbox of a proposed version of the editor. It's not a part of Core and should not be used on production.
-		</aside>
 	</section>
 
 	<section>
@@ -1037,6 +1057,16 @@
 
 	<section>
 		<small>Start Learning</small>
+		<h2>Stay in the Know</h2>
+		<ul>
+			<li><a href="https://make.wordpress.org/core/">Editor Features for 5.5</a></li>
+			<li><a href="https://wp.me/p2AvED-lb3">WordPress 8.2 Release Notes</a></li>
+			<li><a href="https://wp.me/p2AvED-la3">Ways to Keep Up with FSE</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<small>Start Learning</small>
 		<h2>Get the Resources</h2>
 		<ul>
 			<li><a href="https://developer.wordpress.org/block-editor/">Block Editor Handbook</a></li>
@@ -1067,6 +1097,9 @@
 			<li><a href="">Kjell Reigstad</a></li>
 			<li><a href="">Enrique Piqueras</a></li>
 			<li><a href="">Riad Benguella</a></li>
+			<li><a href="">Anne McCarthy</a></li>
+			<li><a href="">Paal Joachim Romdahl</a></li>
+			<li><a href="">Paul Barthmaier</a></li>
 		</ul>
 	</section>
 
